@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC SETTINGS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Book your beauty appointment at Lumière Beauty Studio.">
+
+    <title>Book Appointment | Lumière Beauty Studio</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+
+    <!-- =====================================================
+         BOOKING PAGE CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           PAGE HERO
+        ================================================= */
+
+        .page-hero {
+
+            min-height: 55vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 120px 7% 70px;
+
+            background:
+                linear-gradient(
+                    rgba(45, 37, 39, 0.58),
+                    rgba(45, 37, 39, 0.58)
+                ),
+                url("images/hero.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+
+        }
+
+
+        .page-hero-content {
+
+            max-width: 750px;
+
+        }
+
+
+        .page-hero-content p {
+
+            color: #f9e5e9;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .page-hero-content h1 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size:
+                clamp(45px, 6vw, 65px);
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .page-hero-content h1 span {
+
+            color: #f3b6c0;
+
+        }
+
+
+        .page-hero-description {
+
+            color: #f5f5f5;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            max-width: 600px;
+
+            margin: auto;
+
+        }
+
+
+        /* =================================================
+           BOOKING SECTION
+        ================================================= */
+
+        .booking-section {
+
+            background: #fff8fa;
+
+        }
+
+
+        .booking-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                0.85fr 1.15fr;
+
+            gap: 45px;
+
+            align-items: stretch;
+
+        }
+
+
+        /* =================================================
+           BOOKING INFORMATION
+        ================================================= */
+
+        .booking-info {
+
+            background: #b76e79;
+
+            color: white;
+
+            border-radius: 20px;
+
+            padding: 45px 38px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .booking-info::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+
+            height: 220px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            top: -90px;
+
+            right: -70px;
+
+        }
+
+
+        .booking-info::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+
+            height: 180px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.06);
+
+            bottom: -80px;
+
+            left: -60px;
+
+        }
+
+
+        .booking-info-content {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .booking-info .small-title {
+
+            color: #f9e5e9;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .booking-info h2 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 42px;
+
+            line-height: 1.2;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .booking-info > .booking-info-content > p {
+
+            color: #fff5f6;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        /* =================================================
+           INFO ITEMS
+        ================================================= */
+
+        .booking-info-item {
+
+            display: flex;
+
+            gap: 15px;
+
+            align-items: flex-start;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .booking-info-item i {
+
+            width: 42px;
+
+            height: 42px;
+
+            min-width: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.15);
+
+            font-size: 15px;
+
+        }
+
+
+        .booking-info-item h4 {
+
+            font-size: 13px;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .booking-info-item p {
+
+            font-size: 12px;
+
+            color: #fff1f3;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =================================================
+           BOOKING FORM
+        ================================================= */
+
+        .booking-form-wrapper {
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 42px;
+
+            border: 1px solid #eadcdf;
+
+            box-shadow:
+                0 10px 35px
+                rgba(90, 50, 60, 0.07);
+
+        }
+
+
+        .form-heading {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .form-heading h2 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            color: #2d2527;
+
+            font-size: 32px;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .form-heading p {
+
+            color: #777;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =================================================
+           FORM GRID
+        ================================================= */
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 18px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            color: #3d3436;
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .required {
+
+            color: #b76e79;
+
+        }
+
+
+        .form-group input,
+
+        .form-group select,
+
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 12px 14px;
+
+            border: 1px solid #e4d7da;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            background: #fff;
+
+            color: #333;
+
+            font-family:
+                'Poppins',
+                sans-serif;
+
+            font-size: 12px;
+
+            transition:
+                all 0.3s ease;
+
+        }
+
+
+        .form-group input:focus,
+
+        .form-group select:focus,
+
+        .form-group textarea:focus {
+
+            border-color: #b76e79;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(183, 110, 121, 0.10);
+
+        }
+
+
+        .form-group textarea {
+
+            min-height: 100px;
+
+            resize: vertical;
+
+        }
+
+
+        .form-group input::placeholder,
+
+        .form-group textarea::placeholder {
+
+            color: #aaa;
+
+        }
+
+
+        /* =================================================
+           DATE INPUT
+        ================================================= */
+
+        .form-group input[type="date"] {
+
+            color: #555;
+
+        }
+
+
+        /* =================================================
+           CHECKBOX
+        ================================================= */
+
+        .terms {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 9px;
+
+            margin-top: 2px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .terms input {
+
+            width: 15px;
+
+            height: 15px;
+
+            margin-top: 2px;
+
+            accent-color: #b76e79;
+
+        }
+
+
+        .terms label {
+
+            color: #777;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =================================================
+           SUBMIT BUTTON
+        ================================================= */
+
+        .booking-submit {
+
+            width: 100%;
+
+            padding: 14px 20px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #b76e79;
+
+            color: white;
+
+            font-family:
+                'Poppins',
+                sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            cursor: pointer;
+
+            transition:
+                all 0.3s ease;
+
+        }
+
+
+        .booking-submit:hover {
+
+            background: #9e5965;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(183, 110, 121, 0.25);
+
+        }
+
+
+        .booking-submit i {
+
+            margin-right: 7px;
+
+        }
+
+
+        /* =================================================
+           SUCCESS MESSAGE
+        ================================================= */
+
+        .success-message {
+
+            display: none;
+
+            background: #f1faf4;
+
+            border: 1px solid #ccebd6;
+
+            color: #28733e;
+
+            border-radius: 8px;
+
+            padding: 13px 15px;
+
+            margin-top: 18px;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .success-message.show {
+
+            display: block;
+
+        }
+
+
+        .success-message i {
+
+            margin-right: 7px;
+
+        }
+
+
+        /* =================================================
+           CTA
+        ================================================= */
+
+        .booking-cta {
+
+            background:
+                linear-gradient(
+                    rgba(183, 110, 121, 0.90),
+                    rgba(183, 110, 121, 0.90)
+                ),
+                url("images/hero.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 90px 7%;
+
+        }
+
+
+        .booking-cta h2 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .booking-cta p {
+
+            max-width: 600px;
+
+            margin: 0 auto;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =================================================
+           TABLET
+        ================================================= */
+
+        @media (max-width: 900px) {
+
+            .booking-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .booking-info {
+
+                padding: 40px;
+
+            }
+
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================= */
+
+        @media (max-width: 600px) {
+
+            .page-hero {
+
+                min-height: 50vh;
+
+            }
+
+
+            .page-hero-content h1 {
+
+                font-size: 43px;
+
+            }
+
+
+            .booking-container {
+
+                gap: 25px;
+
+            }
+
+
+            .booking-info {
+
+                padding: 35px 25px;
+
+            }
+
+
+            .booking-info h2 {
+
+                font-size: 35px;
+
+            }
+
+
+            .booking-form-wrapper {
+
+                padding: 25px 20px;
+
+            }
+
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+            }
+
+
+            .form-heading h2 {
+
+                font-size: 28px;
+
+            }
+
+
+            .booking-cta h2 {
+
+                font-size: 35px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+
+            <!-- LOGO -->
+
+            <a href="index.html"
+               class="logo">
+
+                <span>L</span>
+
+                Lumière
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <ul class="nav-links"
+                id="navLinks">
+
+                <li>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="services.html">
+                        Services
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="booking.html"
+                       class="nav-btn">
+
+                        Book Now
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+
+            <!-- MOBILE MENU -->
+
+            <div class="menu-icon"
+                 id="menuIcon">
+
+                <i class="fas fa-bars"></i>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="page-hero">
+
+        <div class="page-hero-content">
+
+            <p>
+                APPOINTMENTS
+            </p>
+
+
+            <h1>
+
+                Book Your
+                <span>Visit</span>
+
+            </h1>
+
+
+            <p class="page-hero-description">
+
+                Choose your preferred service, date and time.
+                We look forward to making your beauty
+                experience special.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BOOKING SECTION
+    ====================================================== -->
+
+    <section class="booking-section section">
+
+
+        <div class="section-heading">
+
+            <p>
+                RESERVE YOUR TIME
+            </p>
+
+
+            <h2>
+                Let's Make You Feel Beautiful
+            </h2>
+
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+
+        <div class="booking-container">
+
+
+            <!-- =================================================
+                 LEFT INFORMATION
+            ================================================== -->
+
+            <div class="booking-info">
+
+
+                <div class="booking-info-content">
+
+
+                    <p class="small-title">
+                        LUMIÈRE BEAUTY STUDIO
+                    </p>
+
+
+                    <h2>
+                        Your Beauty,
+                        Our Passion
+                    </h2>
+
+
+                    <p>
+
+                        Take some time for yourself.
+                        Our professional team is ready
+                        to create a relaxing and personalized
+                        beauty experience.
+
+                    </p>
+
+
+
+                    <!-- LOCATION -->
+
+                    <div class="booking-info-item">
+
+                        <i class="fas fa-location-dot"></i>
+
+                        <div>
+
+                            <h4>
+                                Visit Us
+                            </h4>
+
+                            <p>
+                                Chennai, Tamil Nadu, India
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="booking-info-item">
+
+                        <i class="fas fa-phone"></i>
+
+                        <div>
+
+                            <h4>
+                                Call Us
+                            </h4>
+
+                            <p>
+                                +91 98765 43210
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HOURS -->
+
+                    <div class="booking-info-item">
+
+                        <i class="fas fa-clock"></i>
+
+                        <div>
+
+                            <h4>
+                                Opening Hours
+                            </h4>
+
+                            <p>
+                                Monday - Sunday<br>
+                                9:00 AM - 8:00 PM
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="booking-info-item">
+
+                        <i class="fas fa-envelope"></i>
+
+                        <div>
+
+                            <h4>
+                                Email
+                            </h4>
+
+                            <p>
+                                hello@lumierebeauty.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BOOKING FORM
+            ================================================== -->
+
+            <div class="booking-form-wrapper">
+
+
+                <div class="form-heading">
+
+                    <h2>
+                        Book an Appointment
+                    </h2>
+
+                    <p>
+                        Fill in your details and choose your
+                        preferred appointment time.
+                    </p>
+
+                </div>
+
+
+
+                <form id="bookingForm">
+
+
+                    <!-- NAME + EMAIL -->
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="name">
+
+                                Full Name
+                                <span class="required">*</span>
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+
+                                Email Address
+                                <span class="required">*</span>
+
+                            </label>
+
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- PHONE + SERVICE -->
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+
+                                Phone Number
+                                <span class="required">*</span>
+
+                            </label>
+
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+91 XXXXX XXXXX"
+                                pattern="[0-9+\-\s]{10,15}"
+                                required>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="service">
+
+                                Select Service
+                                <span class="required">*</span>
+
+                            </label>
+
+
+                            <select
+                                id="service"
+                                name="service"
+                                required>
+
+
+                                <option value="">
+                                    Choose a service
+                                </option>
+
+
+                                <option value="Hair Styling">
+
+                                    Hair Styling — From ₹499
+
+                                </option>
+
+
+                                <option value="Facial & Spa">
+
+                                    Facial &amp; Spa — From ₹699
+
+                                </option>
+
+
+                                <option value="Manicure">
+
+                                    Manicure — From ₹399
+
+                                </option>
+
+
+                                <option value="Makeup">
+
+                                    Makeup — From ₹999
+
+                                </option>
+
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- DATE + TIME -->
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="date">
+
+                                Preferred Date
+                                <span class="required">*</span>
+
+                            </label>
+
+
+                            <input
+                                type="date"
+                                id="date"
+                                name="date"
+                                required>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="time">
+
+                                Preferred Time
+                                <span class="required">*</span>
+
+                            </label>
+
+
+                            <select
+                                id="time"
+                                name="time"
+                                required>
+
+
+                                <option value="">
+                                    Choose a time
+                                </option>
+
+
+                                <option value="09:00 AM">
+                                    09:00 AM
+                                </option>
+
+                                <option value="10:00 AM">
+                                    10:00 AM
+                                </option>
+
+                                <option value="11:00 AM">
+                                    11:00 AM
+                                </option>
+
+                                <option value="12:00 PM">
+                                    12:00 PM
+                                </option>
+
+                                <option value="01:00 PM">
+                                    01:00 PM
+                                </option>
+
+                                <option value="02:00 PM">
+                                    02:00 PM
+                                </option>
+
+                                <option value="03:00 PM">
+                                    03:00 PM
+                                </option>
+
+                                <option value="04:00 PM">
+                                    04:00 PM
+                                </option>
+
+                                <option value="05:00 PM">
+                                    05:00 PM
+                                </option>
+
+                                <option value="06:00 PM">
+                                    06:00 PM
+                                </option>
+
+                                <option value="07:00 PM">
+                                    07:00 PM
+                                </option>
+
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- SPECIAL REQUEST -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+
+                            Special Requests
+                            <span style="color:#aaa;">
+                                (Optional)
+                            </span>
+
+                        </label>
+
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us anything we should know..."></textarea>
+
+                    </div>
+
+
+
+                    <!-- TERMS -->
+
+                    <div class="terms">
+
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required>
+
+
+                        <label for="terms">
+
+                            I confirm that the information provided
+                            is correct and I agree to be contacted
+                            regarding my appointment.
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="booking-submit">
+
+                        <i class="fas fa-calendar-check"></i>
+
+                        Confirm Appointment
+
+                    </button>
+
+
+
+                    <!-- SUCCESS MESSAGE -->
+
+                    <div
+                        class="success-message"
+                        id="successMessage">
+
+                        <i class="fas fa-circle-check"></i>
+
+                        <strong>Appointment request received!</strong>
+
+                        Your appointment details have been
+                        recorded. Our team will contact you
+                        shortly to confirm your booking.
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="booking-cta">
+
+
+        <h2>
+            Your Time Starts Here
+        </h2>
+
+
+        <p>
+
+            Relax, refresh and rediscover your confidence
+            with Lumière Beauty Studio.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+
+        <div class="footer-content">
+
+
+            <div class="footer-logo">
+
+                Lumière Beauty Studio
+
+            </div>
+
+
+            <p>
+                Where Beauty Meets Confidence
+            </p>
+
+
+            <div class="social-icons">
+
+
+                <a href="#"
+                   aria-label="Instagram">
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+
+                <a href="#"
+                   aria-label="Facebook">
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+
+                <a href="#"
+                   aria-label="Twitter">
+
+                    <i class="fab fa-twitter"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            &copy; 2026 Lumière Beauty Studio.
+            All Rights Reserved.
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =================================================
+           MOBILE NAVIGATION
+        ================================================= */
+
+        const menuIcon =
+            document.getElementById("menuIcon");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        if (menuIcon) {
+
+            menuIcon.addEventListener(
+                "click",
+                () => {
+
+                    navLinks.classList.toggle("active");
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           CLOSE MOBILE MENU
+        ================================================= */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navLinks.classList.remove("active");
+
+                    }
+                );
+
+            });
+
+
+
+        /* =================================================
+           SET MINIMUM DATE
+        ================================================= */
+
+        const dateInput =
+            document.getElementById("date");
+
+
+        const today =
+            new Date();
+
+
+        const year =
+            today.getFullYear();
+
+
+        const month =
+            String(
+                today.getMonth() + 1
+            ).padStart(2, "0");
+
+
+        const day =
+            String(
+                today.getDate()
+            ).padStart(2, "0");
+
+
+        const todayString =
+            `${year}-${month}-${day}`;
+
+
+        dateInput.min =
+            todayString;
+
+
+
+        /* =================================================
+           BOOKING FORM
+        ================================================= */
+
+        const bookingForm =
+            document.getElementById("bookingForm");
+
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+        bookingForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                /* Check form validity */
+
+                if (!bookingForm.checkValidity()) {
+
+                    bookingForm.reportValidity();
+
+                    return;
+
+                }
+
+
+                /* Get values */
+
+                const name =
+                    document
+                        .getElementById("name")
+                        .value;
+
+
+                const service =
+                    document
+                        .getElementById("service")
+                        .value;
+
+
+                const date =
+                    document
+                        .getElementById("date")
+                        .value;
+
+
+                const time =
+                    document
+                        .getElementById("time")
+                        .value;
+
+
+                /* Show success */
+
+                successMessage.innerHTML = `
+
+                    <i class="fas fa-circle-check"></i>
+
+                    <strong>Thank you, ${name}!</strong>
+
+                    Your request for
+                    <strong>${service}</strong>
+                    on
+                    <strong>${date}</strong>
+                    at
+                    <strong>${time}</strong>
+                    has been received.
+
+                    Our team will contact you shortly
+                    to confirm your appointment.
+
+                `;
+
+
+                successMessage.classList.add("show");
+
+
+                /* Reset form */
+
+                bookingForm.reset();
+
+
+                /* Restore minimum date */
+
+                dateInput.min =
+                    todayString;
+
+
+                /* Scroll to message */
+
+                successMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

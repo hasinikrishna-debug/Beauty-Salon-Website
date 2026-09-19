@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services | Lumière Beauty Studio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* ==============================
+           RESET
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #fff8fa;
+            color: #33292c;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.06);
+        }
+
+        .navbar {
+            width: 90%;
+            max-width: 1250px;
+            height: 80px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            text-decoration: none;
+            color: #30282a;
+
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .logo-circle {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #bd707c;
+            color: white;
+
+            border-radius: 50%;
+
+            font-family: "Playfair Display", serif;
+            font-size: 26px;
+        }
+
+        .nav-links {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4e4447;
+
+            font-size: 13px;
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #bd707c;
+        }
+
+        .book-nav {
+            background: #bd707c;
+            color: white !important;
+
+            padding: 11px 22px;
+
+            border-radius: 25px;
+        }
+
+        .book-nav:hover {
+            background: #a85d69;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            min-height: 430px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f9e5e9,
+                    #fff8fa,
+                    #f4dce1
+                );
+
+            padding: 70px 20px;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero-label {
+            color: #bd707c;
+
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(45px, 7vw, 72px);
+
+            line-height: 1.1;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #bd707c;
+        }
+
+        .hero p {
+            max-width: 620px;
+
+            margin: auto;
+
+            color: #6d6064;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        /* ==============================
+           SERVICES SECTION
+        ============================== */
+
+        .services {
+            padding: 90px 6% 100px;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            max-width: 650px;
+
+            margin: 0 auto 55px;
+        }
+
+        .section-heading small {
+            color: #bd707c;
+
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 3px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 43px;
+
+            margin: 12px 0;
+        }
+
+        .line {
+            width: 55px;
+            height: 2px;
+
+            background: #bd707c;
+
+            margin: 18px auto;
+        }
+
+        .section-heading p {
+            color: #777;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==============================
+           GRID
+        ============================== */
+
+        .service-grid {
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 28px;
+        }
+
+
+        /* ==============================
+           SERVICE CARD
+        ============================== */
+
+        .service-card {
+            background: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            border: 1px solid #f0dfe3;
+
+            box-shadow: 0 12px 30px rgba(80,40,50,0.07);
+
+            transition: 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+
+            box-shadow:
+                0 25px 50px rgba(80,40,50,0.15);
+        }
+
+
+        /* ==============================
+           SVG IMAGE AREA
+        ============================== */
+
+        .service-image {
+            width: 100%;
+            height: 245px;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .service-image svg {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            transition: 0.6s ease;
+        }
+
+        .service-card:hover .service-image svg {
+            transform: scale(1.08);
+        }
+
+
+        /* ==============================
+           IMAGE LABEL
+        ============================== */
+
+        .image-label {
+            position: absolute;
+
+            left: 15px;
+            bottom: 15px;
+
+            padding: 7px 13px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.88);
+
+            color: #9e5c68;
+
+            font-size: 10px;
+            font-weight: 600;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* ==============================
+           ICON
+        ============================== */
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+
+            margin: -32px auto 17px;
+
+            position: relative;
+            z-index: 5;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #f9e3e7;
+
+            color: #bd707c;
+
+            border: 5px solid white;
+
+            font-size: 21px;
+
+            transition: 0.4s;
+        }
+
+        .service-card:hover .service-icon {
+            background: #bd707c;
+            color: white;
+
+            transform: rotate(-8deg) scale(1.1);
+        }
+
+
+        /* ==============================
+           CARD CONTENT
+        ============================== */
+
+        .service-content {
+            text-align: center;
+
+            padding: 0 25px 32px;
+        }
+
+        .service-content h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+        .service-content p {
+            color: #777;
+
+            font-size: 12.5px;
+
+            line-height: 1.8;
+
+            min-height: 72px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* ==============================
+           PRICE
+        ============================== */
+
+        .price {
+            color: #bd707c;
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            margin-bottom: 18px;
+        }
+
+        .price span {
+            color: #999;
+
+            font-size: 11px;
+
+            font-weight: 400;
+        }
+
+
+        /* ==============================
+           BUTTON
+        ============================== */
+
+        .service-btn {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 8px;
+
+            padding: 10px 20px;
+
+            border: 1px solid #bd707c;
+
+            border-radius: 25px;
+
+            color: #bd707c;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            transition: 0.3s;
+        }
+
+        .service-btn:hover {
+            background: #bd707c;
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           FEATURES
+        ============================== */
+
+        .features {
+            max-width: 1100px;
+
+            margin: 70px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .feature {
+            background: white;
+
+            border: 1px solid #f0dfe3;
+
+            border-radius: 15px;
+
+            padding: 22px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 13px;
+
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 12px 25px rgba(80,40,50,0.08);
+        }
+
+        .feature-icon {
+            min-width: 43px;
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #f9e3e7;
+
+            color: #bd707c;
+        }
+
+        .feature h4 {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .feature p {
+            font-size: 10px;
+            color: #999;
+        }
+
+
+        /* ==============================
+           CTA
+        ============================== */
+
+        .cta {
+            text-align: center;
+
+            padding: 90px 20px;
+
+            background: #bd707c;
+
+            color: white;
+        }
+
+        .cta h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 600px;
+
+            margin: auto auto 25px;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            color: #fff1f3;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            background: white;
+
+            color: #bd707c;
+
+            text-decoration: none;
+
+            padding: 13px 25px;
+
+            border-radius: 25px;
+
+            font-size: 12px;
+
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #30282a;
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background: #30282a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 40px 20px 25px;
+        }
+
+        .footer-logo {
+            font-family: "Playfair Display", serif;
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            color: #d4c1c5;
+
+            font-size: 11px;
+
+            margin-bottom: 20px;
+        }
+
+        .socials {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-bottom: 25px;
+        }
+
+        .socials a {
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #665358;
+
+            border-radius: 50%;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            background: #bd707c;
+
+            border-color: #bd707c;
+
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid #4b3d40;
+
+            padding-top: 20px;
+
+            color: #a9989b;
+
+            font-size: 10px;
+        }
+
+
+        /* ==============================
+           TABLET
+        ============================== */
+
+        @media (max-width: 1100px) {
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 850px;
+            }
+
+        }
+
+
+        /* ==============================
+           MOBILE NAV
+        ============================== */
+
+        @media (max-width: 800px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+
+                top: 80px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                display: none;
+
+                flex-direction: column;
+
+                gap: 0;
+
+                padding: 15px 0 25px;
+
+                box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px;
+            }
+
+            .book-nav {
+                display: inline-block !important;
+                width: auto !important;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+        }
+
+
+        /* ==============================
+           SMALL MOBILE
+        ============================== */
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                height: 70px;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .logo-circle {
+                width: 39px;
+                height: 39px;
+
+                font-size: 23px;
+            }
+
+            .nav-links {
+                top: 70px;
+            }
+
+            .hero {
+                min-height: 390px;
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 12px;
+            }
+
+            .services {
+                padding: 65px 6%;
+            }
+
+            .section-heading h2 {
+                font-size: 34px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+                max-width: 430px;
+            }
+
+            .service-image {
+                height: 250px;
+            }
+
+            .service-content h3 {
+                font-size: 27px;
+            }
+
+            .service-content p {
+                min-height: auto;
+                font-size: 13px;
+            }
+
+            .cta {
+                padding: 70px 20px;
+            }
+
+            .cta h2 {
+                font-size: 36px;
+            }
+
+        }
+
+
+        /* ==============================
+           EXTRA SMALL
+        ============================== */
+
+        @media (max-width: 380px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .service-image {
+                height: 220px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         HEADER
+    ============================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-circle">L</span>
+
+                Lumière
+
+            </a>
+
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="services.html" class="active">Services</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <li>
+                    <a href="booking.html" class="book-nav">
+                        Book Now
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==============================
+         HERO
+    ============================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                WHAT WE OFFER
+            </div>
+
+            <h1>
+                Our
+                <span>Beauty Services</span>
+            </h1>
+
+            <p>
+                Discover premium beauty treatments designed
+                to help you relax, refresh and feel confident.
+                Every service is created with care and attention
+                to detail.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         SERVICES
+    ============================== -->
+
+    <section class="services">
+
+        <div class="section-heading">
+
+            <small>
+                BEAUTY • RELAXATION • CONFIDENCE
+            </small>
+
+            <h2>
+                Our Beauty Services
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                Choose from our carefully selected range of
+                professional beauty services.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-grid">
+
+
+            <!-- ==========================
+                 HAIR STYLING
+            =========================== -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+
+                    <!-- EMBEDDED SVG IMAGE -->
+
+                    <svg viewBox="0 0 600 400"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <defs>
+
+                            <linearGradient id="hairBg"
+                                x1="0" y1="0"
+                                x2="1" y2="1">
+
+                                <stop offset="0%"
+                                      stop-color="#f2cfd5"/>
+
+                                <stop offset="100%"
+                                      stop-color="#d993a1"/>
+
+                            </linearGradient>
+
+                        </defs>
+
+                        <rect width="600"
+                              height="400"
+                              fill="url(#hairBg)"/>
+
+
+                        <!-- Mirror -->
+
+                        <ellipse cx="300"
+                                 cy="190"
+                                 rx="145"
+                                 ry="165"
+                                 fill="#fff5f6"
+                                 opacity="0.9"/>
+
+
+                        <!-- Hair -->
+
+                        <circle cx="300"
+                                cy="175"
+                                r="82"
+                                fill="#4b3034"/>
+
+                        <path d="M220 180
+                                 Q180 270 245 330
+                                 Q270 280 300 330
+                                 Q330 280 355 330
+                                 Q420 270 380 180
+                                 Q370 270 300 280
+                                 Q230 270 220 180Z"
+                              fill="#55363b"/>
+
+
+                        <!-- Face -->
+
+                        <ellipse cx="300"
+                                 cy="185"
+                                 rx="52"
+                                 ry="68"
+                                 fill="#f2c1aa"/>
+
+
+                        <!-- Hair front -->
+
+                        <path d="M248 170
+                                 Q245 100 300 100
+                                 Q355 100 352 170
+                                 Q325 135 300 155
+                                 Q275 135 248 170Z"
+                              fill="#3b292d"/>
+
+
+                        <!-- Body -->
+
+                        <path d="M210 400
+                                 Q215 300 300 295
+                                 Q385 300 390 400Z"
+                              fill="#bd707c"/>
+
+
+                        <!-- Scissors -->
+
+                        <circle cx="470"
+                                cy="100"
+                                r="20"
+                                fill="none"
+                                stroke="#ffffff"
+                                stroke-width="7"/>
+
+                        <circle cx="510"
+                                cy="140"
+                                r="20"
+                                fill="none"
+                                stroke="#ffffff"
+                                stroke-width="7"/>
+
+                        <line x1="480"
+                              y1="115"
+                              x2="515"
+                              y2="170"
+                              stroke="#ffffff"
+                              stroke-width="7"/>
+
+                        <line x1="500"
+                              y1="130"
+                              x2="450"
+                              y2="180"
+                              stroke="#ffffff"
+                              stroke-width="7"/>
+
+                    </svg>
+
+
+                    <div class="image-label">
+                        HAIR CARE
+                    </div>
+
+                </div>
+
+
+                <div class="service-icon">
+                    <i class="fas fa-scissors"></i>
+                </div>
+
+
+                <div class="service-content">
+
+                    <h3>
+                        Hair Styling
+                    </h3>
+
+                    <p>
+                        Professional haircuts, styling and
+                        personalized hair treatments designed
+                        for your unique look.
+                    </p>
+
+                    <div class="price">
+                        <span>From</span> ₹499
+                    </div>
+
+                    <a href="booking.html"
+                       class="service-btn">
+
+                        Book Service
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ==========================
+                 FACIAL & SPA
+            =========================== -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+
+                    <svg viewBox="0 0 600 400"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <defs>
+
+                            <linearGradient id="spaBg"
+                                x1="0" y1="0"
+                                x2="1" y2="1">
+
+                                <stop offset="0%"
+                                      stop-color="#ead9cf"/>
+
+                                <stop offset="100%"
+                                      stop-color="#cda99d"/>
+
+                            </linearGradient>
+
+                        </defs>
+
+                        <rect width="600"
+                              height="400"
+                              fill="url(#spaBg)"/>
+
+
+                        <!-- Spa bed -->
+
+                        <rect x="90"
+                              y="240"
+                              width="420"
+                              height="70"
+                              rx="35"
+                              fill="#fff7f3"/>
+
+
+                        <!-- Pillow -->
+
+                        <ellipse cx="170"
+                                 cy="230"
+                                 rx="90"
+                                 ry="45"
+                                 fill="#f7e7e2"/>
+
+
+                        <!-- Person -->
+
+                        <circle cx="190"
+                                cy="205"
+                                r="45"
+                                fill="#efbea9"/>
+
+
+                        <!-- Hair -->
+
+                        <path d="M145 200
+                                 Q135 145 190 140
+                                 Q245 145 235 205
+                                 Q220 165 190 170
+                                 Q160 165 145 200Z"
+                              fill="#4b3034"/>
+
+
+                        <!-- Face towel -->
+
+                        <path d="M150 195
+                                 Q190 180 230 195
+                                 L220 235
+                                 Q190 250 160 235Z"
+                              fill="#fff"
+                              opacity="0.9"/>
+
+
+                        <!-- Plant -->
+
+                        <path d="M440 230
+                                 Q440 160 400 130"
+                              fill="none"
+                              stroke="#6f8568"
+                              stroke-width="10"/>
+
+                        <ellipse cx="390"
+                                 cy="120"
+                                 rx="35"
+                                 ry="15"
+                                 fill="#718b6b"
+                                 transform="rotate(-30 390 120)"/>
+
+                        <ellipse cx="430"
+                                 cy="150"
+                                 rx="35"
+                                 ry="15"
+                                 fill="#829b78"
+                                 transform="rotate(25 430 150)"/>
+
+                        <ellipse cx="390"
+                                 cy="175"
+                                 rx="35"
+                                 ry="15"
+                                 fill="#6c8668"
+                                 transform="rotate(-25 390 175)"/>
+
+
+                        <!-- Decorative circles -->
+
+                        <circle cx="500"
+                                cy="70"
+                                r="30"
+                                fill="#fff"
+                                opacity="0.35"/>
+
+                        <circle cx="90"
+                                cy="100"
+                                r="22"
+                                fill="#fff"
+                                opacity="0.4"/>
+
+                    </svg>
+
+
+                    <div class="image-label">
+                        SPA & WELLNESS
+                    </div>
+
+                </div>
+
+
+                <div class="service-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+
+
+                <div class="service-content">
+
+                    <h3>
+                        Facial &amp; Spa
+                    </h3>
+
+                    <p>
+                        Relaxing facials and spa treatments
+                        created to help you feel refreshed
+                        and completely pampered.
+                    </p>
+
+                    <div class="price">
+                        <span>From</span> ₹699
+                    </div>
+
+                    <a href="booking.html"
+                       class="service-btn">
+
+                        Book Service
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ==========================
+                 MANICURE
+            =========================== -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+
+                    <svg viewBox="0 0 600 400"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <defs>
+
+                            <linearGradient id="nailBg"
+                                x1="0" y1="0"
+                                x2="1" y2="1">
+
+                                <stop offset="0%"
+                                      stop-color="#f7dce2"/>
+
+                                <stop offset="100%"
+                                      stop-color="#d99ba7"/>
+
+                            </linearGradient>
+
+                        </defs>
+
+                        <rect width="600"
+                              height="400"
+                              fill="url(#nailBg)"/>
+
+
+                        <!-- Hand -->
+
+                        <path d="M175 330
+                                 Q140 280 165 230
+                                 L205 135
+                                 Q220 115 238 125
+                                 Q250 135 245 155
+                                 L220 225
+                                 L245 145
+                                 Q252 125 270 130
+                                 Q285 137 280 158
+                                 L260 230
+                                 L285 150
+                                 Q292 130 310 138
+                                 Q323 146 318 165
+                                 L300 235
+                                 L330 170
+                                 Q338 150 355 158
+                                 Q370 166 362 185
+                                 L330 270
+                                 Q315 330 250 345Z"
+                              fill="#efbca8"/>
+
+
+                        <!-- Nails -->
+
+                        <rect x="205"
+                              y="125"
+                              width="24"
+                              height="48"
+                              rx="12"
+                              fill="#bd707c"
+                              transform="rotate(18 217 149)"/>
+
+                        <rect x="250"
+                              y="125"
+                              width="24"
+                              height="50"
+                              rx="12"
+                              fill="#c87986"
+                              transform="rotate(12 262 150)"/>
+
+                        <rect x="292"
+                              y="133"
+                              width="24"
+                              height="48"
+                              rx="12"
+                              fill="#d48894"
+                              transform="rotate(8 304 157)"/>
+
+                        <rect x="334"
+                              y="153"
+                              width="24"
+                              height="45"
+                              rx="12"
+                              fill="#b96574"
+                              transform="rotate(25 346 175)"/>
+
+
+                        <!-- Nail polish bottle -->
+
+                        <rect x="425"
+                              y="210"
+                              width="70"
+                              height="90"
+                              rx="12"
+                              fill="#ffffff"
+                              opacity="0.9"/>
+
+                        <rect x="445"
+                              y="175"
+                              width="30"
+                              height="45"
+                              rx="5"
+                              fill="#bd707c"/>
+
+                        <rect x="437"
+                              y="245"
+                              width="46"
+                              height="38"
+                              rx="8"
+                              fill="#bd707c"/>
+
+
+                        <!-- Sparkles -->
+
+                        <text x="90"
+                              y="100"
+                              font-size="50"
+                              fill="#ffffff">
+                            ✦
+                        </text>
+
+                        <text x="470"
+                              y="100"
+                              font-size="35"
+                              fill="#ffffff">
+                            ✧
+                        </text>
+
+                    </svg>
+
+
+                    <div class="image-label">
+                        NAIL CARE
+                    </div>
+
+                </div>
+
+
+                <div class="service-icon">
+                    <i class="fas fa-hand-sparkles"></i>
+                </div>
+
+
+                <div class="service-content">
+
+                    <h3>
+                        Manicure
+                    </h3>
+
+                    <p>
+                        Professional manicure and nail care
+                        treatments for beautifully polished
+                        and well-groomed hands.
+                    </p>
+
+                    <div class="price">
+                        <span>From</span> ₹399
+                    </div>
+
+                    <a href="booking.html"
+                       class="service-btn">
+
+                        Book Service
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ==========================
+                 MAKEUP
+            =========================== -->
+
+            <article class="service-card">
+
+                <div class="service-image">
+
+                    <svg viewBox="0 0 600 400"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <defs>
+
+                            <linearGradient id="makeupBg"
+                                x1="0" y1="0"
+                                x2="1" y2="1">
+
+                                <stop offset="0%"
+                                      stop-color="#f0d5dc"/>
+
+                                <stop offset="100%"
+                                      stop-color="#bd7b88"/>
+
+                            </linearGradient>
+
+                        </defs>
+
+                        <rect width="600"
+                              height="400"
+                              fill="url(#makeupBg)"/>
+
+
+                        <!-- Mirror -->
+
+                        <ellipse cx="300"
+                                 cy="195"
+                                 rx="125"
+                                 ry="155"
+                                 fill="#fff8f9"
+                                 opacity="0.85"/>
+
+
+                        <!-- Face -->
+
+                        <ellipse cx="300"
+                                 cy="185"
+                                 rx="65"
+                                 ry="85"
+                                 fill="#efbba7"/>
+
+
+                        <!-- Hair -->
+
+                        <path d="M235 180
+                                 Q220 85 300 75
+                                 Q380 85 365 180
+                                 Q345 120 300 125
+                                 Q255 120 235 180Z"
+                              fill="#432c31"/>
+
+
+                        <!-- Hair sides -->
+
+                        <path d="M240 160
+                                 Q205 230 250 300
+                                 L220 310
+                                 Q175 230 205 150Z"
+                              fill="#432c31"/>
+
+                        <path d="M360 160
+                                 Q395 230 350 300
+                                 L380 310
+                                 Q425 230 395 150Z"
+                              fill="#432c31"/>
+
+
+                        <!-- Eyes -->
+
+                        <path d="M265 180 Q280 170 292 180"
+                              fill="none"
+                              stroke="#4b3034"
+                              stroke-width="5"/>
+
+                        <path d="M308 180 Q320 170 335 180"
+                              fill="none"
+                              stroke="#4b3034"
+                              stroke-width="5"/>
+
+
+                        <!-- Lips -->
+
+                        <path d="M280 225
+                                 Q300 210 320 225
+                                 Q300 250 280 225Z"
+                              fill="#bd596c"/>
+
+
+                        <!-- Makeup brushes -->
+
+                        <rect x="455"
+                              y="100"
+                              width="13"
+                              height="170"
+                              rx="6"
+                              fill="#fff"/>
+
+                        <circle cx="461"
+                                cy="85"
+                                r="25"
+                                fill="#c98591"/>
+
+
+                        <rect x="500"
+                              y="125"
+                              width="12"
+                              height="145"
+                              rx="6"
+                              fill="#f8e3e5"/>
+
+                        <circle cx="506"
+                                cy="110"
+                                r="22"
+                                fill="#9d6370"/>
+
+
+                        <!-- Makeup palette -->
+
+                        <rect x="75"
+                              y="245"
+                              width="120"
+                              height="70"
+                              rx="18"
+                              fill="#fff"/>
+
+                        <circle cx="105"
+                                cy="280"
+                                r="15"
+                                fill="#d98591"/>
+
+                        <circle cx="145"
+                                cy="280"
+                                r="15"
+                                fill="#b86776"/>
+
+                        <circle cx="175"
+                                cy="280"
+                                r="15"
+                                fill="#e6b0b8"/>
+
+
+                        <!-- Sparkles -->
+
+                        <text x="90"
+                              y="90"
+                              font-size="45"
+                              fill="#fff">
+                            ✦
+                        </text>
+
+                        <text x="445"
+                              y="330"
+                              font-size="50"
+                              fill="#fff">
+                            ✧
+                        </text>
+
+                    </svg>
+
+
+                    <div class="image-label">
+                        MAKEUP
+                    </div>
+
+                </div>
+
+
+                <div class="service-icon">
+                    <i class="fas fa-paintbrush"></i>
+                </div>
+
+
+                <div class="service-content">
+
+                    <h3>
+                        Makeup
+                    </h3>
+
+                    <p>
+                        Elegant makeup services for parties,
+                        events and special occasions,
+                        customized to your desired look.
+                    </p>
+
+                    <div class="price">
+                        <span>From</span> ₹999
+                    </div>
+
+                    <a href="booking.html"
+                       class="service-btn">
+
+                        Book Service
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+
+        <!-- ==============================
+             FEATURES
+        ============================== -->
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+
+                <div>
+
+                    <h4>
+                        Professional Experts
+                    </h4>
+
+                    <p>
+                        Skilled beauty professionals
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+
+                <div>
+
+                    <h4>
+                        Personalized Care
+                    </h4>
+
+                    <p>
+                        Treatments designed for you
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <div>
+
+                    <h4>
+                        Premium Experience
+                    </h4>
+
+                    <p>
+                        Quality service every time
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         CTA
+    ============================== -->
+
+    <section class="cta">
+
+        <h2>
+            Ready to Feel Beautiful?
+        </h2>
+
+        <p>
+            Choose your favorite service and book an
+            appointment with our professional beauty team.
+        </p>
+
+        <a href="booking.html" class="cta-btn">
+
+            <i class="fas fa-calendar-check"></i>
+
+            Book Your Appointment
+
+        </a>
+
+    </section>
+
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Lumière Beauty Studio
+        </div>
+
+        <div class="footer-text">
+            Where Beauty Meets Confidence
+        </div>
+
+
+        <div class="socials">
+
+            <a href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+
+        </div>
+
+
+        <div class="copyright">
+            © 2026 Lumière Beauty Studio.
+            All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+        const menuBtn = document.getElementById("menuBtn");
+
+        const navLinks = document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("show");
+
+        });
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    navLinks.classList.remove("show");
+
+                });
+
+            });
+
+    </script>
+
+
+</body>
+
+</html> 

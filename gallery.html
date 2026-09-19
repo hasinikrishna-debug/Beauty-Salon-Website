@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC SETTINGS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Explore the Lumière Beauty Studio gallery featuring our salon, beauty treatments, hair styling, makeup and professional team.">
+
+    <title>Gallery | Lumière Beauty Studio</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+
+    <!-- =====================================================
+         GALLERY PAGE CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           GALLERY HERO
+        ================================================= */
+
+        .page-hero {
+
+            min-height: 55vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 120px 7% 70px;
+
+            background:
+                linear-gradient(
+                    rgba(45, 37, 39, 0.58),
+                    rgba(45, 37, 39, 0.58)
+                ),
+                url("images/hero.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+
+        }
+
+
+        .page-hero-content {
+
+            max-width: 750px;
+
+        }
+
+
+        .page-hero-content p {
+
+            color: #f9e5e9;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .page-hero-content h1 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size:
+                clamp(45px, 6vw, 65px);
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .page-hero-content h1 span {
+
+            color: #f3b6c0;
+
+        }
+
+
+        .page-hero-description {
+
+            color: #f5f5f5;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            max-width: 600px;
+
+            margin: auto;
+
+        }
+
+
+        /* =================================================
+           GALLERY SECTION
+        ================================================= */
+
+        .gallery-page {
+
+            background: #fff8fa;
+
+        }
+
+
+        .gallery-page-container {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+        }
+
+
+        /* =================================================
+           FILTER BUTTONS
+        ================================================= */
+
+        .gallery-filters {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .filter-btn {
+
+            border: 1px solid #eadcdf;
+
+            background: white;
+
+            color: #555;
+
+            padding: 10px 20px;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            transition: all 0.3s ease;
+
+        }
+
+
+        .filter-btn:hover,
+
+        .filter-btn.active {
+
+            background: #b76e79;
+
+            color: white;
+
+            border-color: #b76e79;
+
+        }
+
+
+        /* =================================================
+           GALLERY GRID
+        ================================================= */
+
+        .gallery-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .gallery-card {
+
+            position: relative;
+
+            height: 300px;
+
+            overflow: hidden;
+
+            border-radius: 17px;
+
+            background: #f9e5e9;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 25px
+                rgba(90, 50, 60, 0.07);
+
+            transition:
+                all 0.3s ease;
+
+        }
+
+
+        .gallery-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(90, 50, 60, 0.12);
+
+        }
+
+
+        .gallery-card img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.5s ease;
+
+        }
+
+
+        .gallery-card:hover img {
+
+            transform:
+                scale(1.08);
+
+        }
+
+
+        /* =================================================
+           IMAGE OVERLAY
+        ================================================= */
+
+        .gallery-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 20px;
+
+            background:
+                rgba(45, 37, 39, 0.55);
+
+            color: white;
+
+            opacity: 0;
+
+            transition:
+                opacity 0.3s ease;
+
+        }
+
+
+        .gallery-card:hover
+        .gallery-overlay {
+
+            opacity: 1;
+
+        }
+
+
+        .gallery-overlay i {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: white;
+
+            color: #b76e79;
+
+            border-radius: 50%;
+
+            font-size: 18px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .gallery-overlay h3 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 22px;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .gallery-overlay p {
+
+            font-size: 12px;
+
+            color: #f5f5f5;
+
+        }
+
+
+        /* =================================================
+           LIGHTBOX
+        ================================================= */
+
+        .lightbox {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            background:
+                rgba(20, 15, 17, 0.92);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                all 0.3s ease;
+
+        }
+
+
+        .lightbox.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        .lightbox-content {
+
+            max-width: 900px;
+
+            width: 100%;
+
+            max-height: 90vh;
+
+            position: relative;
+
+            text-align: center;
+
+        }
+
+
+        .lightbox-content img {
+
+            max-width: 100%;
+
+            max-height: 75vh;
+
+            width: auto;
+
+            height: auto;
+
+            margin: auto;
+
+            border-radius: 10px;
+
+            object-fit: contain;
+
+            box-shadow:
+                0 15px 50px
+                rgba(0, 0, 0, 0.3);
+
+        }
+
+
+        .lightbox-title {
+
+            color: white;
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 25px;
+
+            margin-top: 15px;
+
+        }
+
+
+        .lightbox-close {
+
+            position: fixed;
+
+            top: 25px;
+
+            right: 30px;
+
+            width: 45px;
+
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: white;
+
+            color: #b76e79;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            z-index: 2001;
+
+            transition:
+                all 0.3s ease;
+
+        }
+
+
+        .lightbox-close:hover {
+
+            background: #b76e79;
+
+            color: white;
+
+            transform:
+                rotate(90deg);
+
+        }
+
+
+        /* =================================================
+           CTA
+        ================================================= */
+
+        .gallery-cta {
+
+            background:
+                linear-gradient(
+                    rgba(183, 110, 121, 0.90),
+                    rgba(183, 110, 121, 0.90)
+                ),
+                url("images/hero.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 90px 7%;
+
+        }
+
+
+        .gallery-cta h2 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .gallery-cta p {
+
+            max-width: 600px;
+
+            margin: 0 auto 25px;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .gallery-cta .primary-btn {
+
+            background: white;
+
+            color: #b76e79;
+
+            border-color: white;
+
+        }
+
+
+        .gallery-cta .primary-btn:hover {
+
+            background: #2d2527;
+
+            color: white;
+
+            border-color: #2d2527;
+
+        }
+
+
+        /* =================================================
+           TABLET
+        ================================================= */
+
+        @media (max-width: 900px) {
+
+            .gallery-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================= */
+
+        @media (max-width: 600px) {
+
+            .page-hero {
+
+                min-height: 50vh;
+
+            }
+
+
+            .page-hero-content h1 {
+
+                font-size: 43px;
+
+            }
+
+
+            .gallery-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .gallery-card {
+
+                height: 320px;
+
+            }
+
+
+            .gallery-filters {
+
+                gap: 8px;
+
+            }
+
+
+            .filter-btn {
+
+                padding:
+                    8px 14px;
+
+                font-size: 12px;
+
+            }
+
+
+            .lightbox {
+
+                padding: 15px;
+
+            }
+
+
+            .lightbox-close {
+
+                top: 15px;
+
+                right: 15px;
+
+            }
+
+
+            .gallery-cta h2 {
+
+                font-size: 35px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+
+            <!-- LOGO -->
+
+            <a href="index.html"
+               class="logo">
+
+                <span>L</span>
+
+                Lumière
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <ul class="nav-links"
+                id="navLinks">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="booking.html"
+                       class="nav-btn">
+
+                        Book Now
+
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- MOBILE MENU -->
+
+            <div class="menu-icon"
+                 id="menuIcon">
+
+                <i class="fas fa-bars"></i>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="page-hero">
+
+        <div class="page-hero-content">
+
+            <p>
+                OUR WORK
+            </p>
+
+            <h1>
+
+                Beauty
+                <span>Gallery</span>
+
+            </h1>
+
+            <p class="page-hero-description">
+
+                Take a glimpse into the Lumière experience,
+                from beautiful hairstyles and makeup looks
+                to our relaxing salon environment.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GALLERY
+    ====================================================== -->
+
+    <section class="gallery-page section">
+
+
+        <div class="section-heading">
+
+            <p>
+                LUMIÈRE COLLECTION
+            </p>
+
+            <h2>
+                A Glimpse of Beauty
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+
+        <div class="gallery-page-container">
+
+
+            <!-- =================================================
+                 FILTER BUTTONS
+            ================================================== -->
+
+            <div class="gallery-filters">
+
+
+                <button class="filter-btn active"
+                        data-filter="all">
+
+                    All
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="hair">
+
+                    Hair
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="spa">
+
+                    Spa
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="nails">
+
+                    Nails
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="makeup">
+
+                    Makeup
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="salon">
+
+                    Salon
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GALLERY GRID
+            ================================================== -->
+
+            <div class="gallery-grid">
+
+
+                <!-- IMAGE 1 -->
+
+                <div class="gallery-card"
+                     data-category="salon"
+                     data-title="Lumière Salon">
+
+
+                    <img src="images/salon.jpg"
+                         alt="Lumière beauty salon"
+                         loading="lazy">
+
+
+                    <div class="gallery-overlay">
+
+                        <i class="fas fa-magnifying-glass"></i>
+
+                        <h3>
+                            Lumière Salon
+                        </h3>
+
+                        <p>
+                            Our beautiful salon environment
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- IMAGE 2 -->
+
+                <div class="gallery-card"
+                     data-category="hair"
+                     data-title="Hair Styling">
+
+
+                    <img src="images/service1.jpg"
+                         alt="Hair styling"
+                         loading="lazy">
+
+
+                    <div class="gallery-overlay">
+
+                        <i class="fas fa-magnifying-glass"></i>
+
+                        <h3>
+                            Hair Styling
+                        </h3>
+
+                        <p>
+                            Professional styling
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- IMAGE 3 -->
+
+                <div class="gallery-card"
+                     data-category="spa"
+                     data-title="Facial & Spa">
+
+
+                    <img src="images/service2.jpg"
+                         alt="Facial and spa"
+                         loading="lazy">
+
+
+                    <div class="gallery-overlay">
+
+                        <i class="fas fa-magnifying-glass"></i>
+
+                        <h3>
+                            Facial &amp; Spa
+                        </h3>
+
+                        <p>
+                            Relax and refresh
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- IMAGE 4 -->
+
+                <div class="gallery-card"
+                     data-category="nails"
+                     data-title="Manicure">
+
+
+                    <img src="images/service3.jpg"
+                         alt="Manicure"
+                         loading="lazy">
+
+
+                    <div class="gallery-overlay">
+
+                        <i class="fas fa-magnifying-glass"></i>
+
+                        <h3>
+                            Manicure
+                        </h3>
+
+                        <p>
+                            Professional nail care
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- IMAGE 5 -->
+
+                <div class="gallery-card"
+                     data-category="hair"
+                     data-title="Hair Specialist">
+
+
+                    <img src="images/stylist1.jpg"
+                         alt="Hair stylist"
+                         loading="lazy">
+
+
+                    <div class="gallery-overlay">
+
+                        <i class="fas fa-magnifying-glass"></i>
+
+                        <h3>
+                            Hair Specialist
+                        </h3>
+
+                        <p>
+                            Professional hair care
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- IMAGE 6 -->
+
+                <div class="gallery-card"
+                     data-category="makeup"
+                     data-title="Beauty Specialist">
+
+
+                    <img src="images/stylist2.jpg"
+                         alt="Beauty specialist"
+                         loading="lazy">
+
+
+                    <div class="gallery-overlay">
+
+                        <i class="fas fa-magnifying-glass"></i>
+
+                        <h3>
+                            Beauty Specialist
+                        </h3>
+
+                        <p>
+                            Personalized beauty care
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- IMAGE 7 -->
+
+                <div class="gallery-card"
+                     data-category="makeup"
+                     data-title="Makeup Artist">
+
+
+                    <img src="images/stylist3.jpg"
+                         alt="Makeup artist"
+                         loading="lazy">
+
+
+                    <div class="gallery-overlay">
+
+                        <i class="fas fa-magnifying-glass"></i>
+
+                        <h3>
+                            Makeup Artist
+                        </h3>
+
+                        <p>
+                            Elegant makeup looks
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- IMAGE 8 -->
+
+                <div class="gallery-card"
+                     data-category="salon"
+                     data-title="Beauty Experience">
+
+
+                    <img src="images/hero.jpg"
+                         alt="Lumière beauty experience"
+                         loading="lazy">
+
+
+                    <div class="gallery-overlay">
+
+                        <i class="fas fa-magnifying-glass"></i>
+
+                        <h3>
+                            Beauty Experience
+                        </h3>
+
+                        <p>
+                            Beauty, relaxation and confidence
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- IMAGE 9 -->
+
+                <div class="gallery-card"
+                     data-category="spa"
+                     data-title="Relaxation">
+
+
+                    <img src="images/salon.jpg"
+                         alt="Relaxing salon environment"
+                         loading="lazy">
+
+
+                    <div class="gallery-overlay">
+
+                        <i class="fas fa-magnifying-glass"></i>
+
+                        <h3>
+                            Relaxation
+                        </h3>
+
+                        <p>
+                            A peaceful beauty experience
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LIGHTBOX
+    ====================================================== -->
+
+    <div class="lightbox"
+         id="lightbox">
+
+
+        <button class="lightbox-close"
+                id="lightboxClose"
+                aria-label="Close image">
+
+            <i class="fas fa-xmark"></i>
+
+        </button>
+
+
+        <div class="lightbox-content">
+
+
+            <img id="lightboxImage"
+                 src=""
+                 alt="Gallery preview">
+
+
+            <div class="lightbox-title"
+                 id="lightboxTitle">
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="gallery-cta">
+
+
+        <h2>
+            Love What You See?
+        </h2>
+
+
+        <p>
+
+            Let our professional beauty team create
+            a look that makes you feel confident and beautiful.
+
+        </p>
+
+
+        <a href="booking.html"
+           class="primary-btn">
+
+            Book Your Appointment
+
+        </a>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+
+        <div class="footer-content">
+
+
+            <div class="footer-logo">
+
+                Lumière Beauty Studio
+
+            </div>
+
+
+            <p>
+                Where Beauty Meets Confidence
+            </p>
+
+
+            <div class="social-icons">
+
+
+                <a href="#"
+                   aria-label="Instagram">
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+
+                <a href="#"
+                   aria-label="Facebook">
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+
+                <a href="#"
+                   aria-label="Twitter">
+
+                    <i class="fab fa-twitter"></i>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            &copy; 2026 Lumière Beauty Studio.
+            All Rights Reserved.
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         GALLERY JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =================================================
+           MOBILE NAVIGATION
+        ================================================= */
+
+        const menuIcon =
+            document.getElementById("menuIcon");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        if (menuIcon) {
+
+            menuIcon.addEventListener(
+                "click",
+                () => {
+
+                    navLinks.classList.toggle("active");
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           CLOSE MOBILE MENU AFTER CLICK
+        ================================================= */
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navLinks.classList.remove("active");
+
+                    }
+                );
+
+            });
+
+
+        /* =================================================
+           GALLERY FILTER
+        ================================================= */
+
+        const filterButtons =
+            document.querySelectorAll(".filter-btn");
+
+        const galleryCards =
+            document.querySelectorAll(".gallery-card");
+
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+
+                    /* Remove active */
+
+                    filterButtons.forEach(btn => {
+
+                        btn.classList.remove("active");
+
+                    });
+
+
+                    /* Add active */
+
+                    button.classList.add("active");
+
+
+                    const filter =
+                        button.getAttribute("data-filter");
+
+
+                    galleryCards.forEach(card => {
+
+                        const category =
+                            card.getAttribute("data-category");
+
+
+                        if (
+                            filter === "all" ||
+                            category === filter
+                        ) {
+
+                            card.style.display = "block";
+
+                        }
+
+                        else {
+
+                            card.style.display = "none";
+
+                        }
+
+                    });
+
+                }
+            );
+
+        });
+
+
+        /* =================================================
+           LIGHTBOX
+        ================================================= */
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+        const lightboxImage =
+            document.getElementById("lightboxImage");
+
+        const lightboxTitle =
+            document.getElementById("lightboxTitle");
+
+        const lightboxClose =
+            document.getElementById("lightboxClose");
+
+
+        galleryCards.forEach(card => {
+
+            card.addEventListener(
+                "click",
+                () => {
+
+
+                    const image =
+                        card.querySelector("img");
+
+
+                    const title =
+                        card.getAttribute("data-title");
+
+
+                    lightboxImage.src =
+                        image.src;
+
+
+                    lightboxImage.alt =
+                        image.alt;
+
+
+                    lightboxTitle.textContent =
+                        title;
+
+
+                    lightbox.classList.add("active");
+
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+            );
+
+        });
+
+
+        /* =================================================
+           CLOSE LIGHTBOX
+        ================================================= */
+
+        function closeLightbox() {
+
+            lightbox.classList.remove("active");
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+
+        /* Close when clicking outside image */
+
+        lightbox.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target === lightbox
+                ) {
+
+                    closeLightbox();
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           ESC KEY
+        ================================================= */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Escape" &&
+                    lightbox.classList.contains("active")
+                ) {
+
+                    closeLightbox();
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
